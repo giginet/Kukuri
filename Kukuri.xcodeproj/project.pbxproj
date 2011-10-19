@@ -121,7 +121,6 @@
 		07D1B61D144E4E3C00306892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B61C144E4E3C00306892 /* main.m */; };
 		07D1B620144E4E3C00306892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B61F144E4E3C00306892 /* AppDelegate.m */; };
 		07D1B623144E4E3C00306892 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B622144E4E3C00306892 /* RootViewController.m */; };
-		07D1B626144E4E3C00306892 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B625144E4E3C00306892 /* HelloWorldLayer.m */; };
 		07D1B62F144E4ECE00306892 /* CanvasScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B62E144E4ECE00306892 /* CanvasScene.m */; };
 		07D1B646144E4EEA00306892 /* KWAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B632144E4EEA00306892 /* KWAnimation.m */; };
 		07D1B647144E4EEA00306892 /* KWMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B635144E4EEA00306892 /* KWMusicManager.m */; };
@@ -368,8 +367,6 @@
 		07D1B61F144E4E3C00306892 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		07D1B621144E4E3C00306892 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		07D1B622144E4E3C00306892 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		07D1B624144E4E3C00306892 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		07D1B625144E4E3C00306892 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		07D1B627144E4E3C00306892 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		07D1B62D144E4ECE00306892 /* CanvasScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasScene.h; sourceTree = "<group>"; };
 		07D1B62E144E4ECE00306892 /* CanvasScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasScene.m; sourceTree = "<group>"; };
@@ -454,8 +451,6 @@
 				07D1B61F144E4E3C00306892 /* AppDelegate.m */,
 				07D1B621144E4E3C00306892 /* RootViewController.h */,
 				07D1B622144E4E3C00306892 /* RootViewController.m */,
-				07D1B624144E4E3C00306892 /* HelloWorldLayer.h */,
-				07D1B625144E4E3C00306892 /* HelloWorldLayer.m */,
 				07D1B62D144E4ECE00306892 /* CanvasScene.h */,
 				07D1B62E144E4ECE00306892 /* CanvasScene.m */,
 				07D1B627144E4E3C00306892 /* GameConfig.h */,
@@ -990,7 +985,6 @@
 				07D1B61D144E4E3C00306892 /* main.m in Sources */,
 				07D1B620144E4E3C00306892 /* AppDelegate.m in Sources */,
 				07D1B623144E4E3C00306892 /* RootViewController.m in Sources */,
-				07D1B626144E4E3C00306892 /* HelloWorldLayer.m in Sources */,
 				07D1B62F144E4ECE00306892 /* CanvasScene.m in Sources */,
 				07D1B646144E4EEA00306892 /* KWAnimation.m in Sources */,
 				07D1B647144E4EEA00306892 /* KWMusicManager.m in Sources */,
@@ -1099,6 +1093,7 @@
 				07D1B62C144E4E3C00306892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

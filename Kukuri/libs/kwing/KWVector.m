@@ -124,6 +124,10 @@
 	return self;
 }
 
+- (CGPoint)point{
+  return CGPointMake(x_, y_);
+}
+
 - (BOOL)isEqual:(id)object{
   KWVector* v = (KWVector*)object;
   return v.x == x_ && v.y == y_;

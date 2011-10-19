@@ -8,6 +8,8 @@
 
 #import "kwing.h"
 
-@interface CanvasScene : KWScene
+@interface CanvasScene : KWScene{
+  NSMutableArray* drawPoints_;
+}
 
 @end

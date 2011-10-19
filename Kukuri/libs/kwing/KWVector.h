@@ -36,4 +36,5 @@
 
 @property(readonly) CGFloat length;
 @property(readonly) CGFloat angle;
+@property(readonly) CGPoint point;
 @end
