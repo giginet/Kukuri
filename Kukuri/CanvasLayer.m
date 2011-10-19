@@ -9,27 +9,24 @@
 #import "CanvasLayer.h"
 
 @implementation CanvasLayer
+@synthesize currentCircle=currentCircle_;
 
 - (id)init{
   if( self = [super init] ){
-    drawPoints_ = [[NSMutableArray alloc] init];
+    circles_ = [[NSMutableArray alloc] init];
+    self.currentCircle = nil;
     self.isTouchEnabled = YES;
   }
   return self;
 }
 
 - (void)draw{
-  [super draw];
   glColor4f(0.0, 1.0, 0.0, 1.0);
   glLineWidth(4.0f);
-  int count = [drawPoints_ count];
-  if(count > 1){
-    for(int i=0;i<count-1;++i){
-      KWVector* begin = (KWVector*)[drawPoints_ objectAtIndex:i];
-      KWVector* end   = (KWVector*)[drawPoints_ objectAtIndex:i+1];
-      ccDrawLine(begin.point, end.point);
-    }
+  for(MagicCircle* circle in circles_){
+    [circle draw];
   }
+  [super draw];
 }
 
 -(void) registerWithTouchDispatcher{
@@ -39,16 +36,23 @@
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+  self.currentCircle = [MagicCircle circle];
+  [circles_ addObject:self.currentCircle];
   return YES;
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
-  KWVector* point = [KWVector vectorWithPoint:[self convertToWorldSpace:[self convertTouchToNodeSpace:touch]]];
-  [drawPoints_ addObject:point];
+  CGPoint point = [self convertToWorldSpace:[self convertTouchToNodeSpace:touch]];
+  [self.currentCircle addPoint:point];
+}
+
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
+  self.currentCircle = nil;
 }
 
 - (void)dealloc{
-  [drawPoints_ release];
+  [currentCircle_ release];
+  [circles_ release];
   [super dealloc];
 }
 

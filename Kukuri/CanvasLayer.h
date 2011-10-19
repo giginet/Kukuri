@@ -8,9 +8,12 @@
 
 #import "CCLayer.h"
 #import "kwing.h"
+#import "MagicCircle.h"
 
 @interface CanvasLayer : CCLayer{
-  NSMutableArray* drawPoints_;
+  MagicCircle* currentCircle_;
+  NSMutableArray* circles_;
 }
 
+@property(readwrite, retain) MagicCircle* currentCircle;
 @end

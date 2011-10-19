@@ -134,6 +134,7 @@
 		07D1B69D144E6F5200306892 /* KWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B691144E6F5200306892 /* KWTimer.m */; };
 		07D1B69E144E6F5200306892 /* KWVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B693144E6F5200306892 /* KWVector.m */; };
 		07D1B6A1144E716400306892 /* CanvasLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B6A0144E716400306892 /* CanvasLayer.m */; };
+		07D1B6A4144E74FD00306892 /* MagicCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B6A3144E74FD00306892 /* MagicCircle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -396,6 +397,8 @@
 		07D1B693144E6F5200306892 /* KWVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWVector.m; sourceTree = "<group>"; };
 		07D1B69F144E716400306892 /* CanvasLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasLayer.h; sourceTree = "<group>"; };
 		07D1B6A0144E716400306892 /* CanvasLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasLayer.m; sourceTree = "<group>"; };
+		07D1B6A2144E74FD00306892 /* MagicCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicCircle.h; sourceTree = "<group>"; };
+		07D1B6A3144E74FD00306892 /* MagicCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicCircle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +455,8 @@
 		07D1B4CC144E4E3B00306892 /* Kukuri */ = {
 			isa = PBXGroup;
 			children = (
+				07D1B6A2144E74FD00306892 /* MagicCircle.h */,
+				07D1B6A3144E74FD00306892 /* MagicCircle.m */,
 				07D1B69F144E716400306892 /* CanvasLayer.h */,
 				07D1B6A0144E716400306892 /* CanvasLayer.m */,
 				07D1B61E144E4E3C00306892 /* AppDelegate.h */,
@@ -1038,6 +1043,7 @@
 				07D1B69D144E6F5200306892 /* KWTimer.m in Sources */,
 				07D1B69E144E6F5200306892 /* KWVector.m in Sources */,
 				07D1B6A1144E716400306892 /* CanvasLayer.m in Sources */,
+				07D1B6A4144E74FD00306892 /* MagicCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
