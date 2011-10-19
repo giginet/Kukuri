@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 Kawaz. All rights reserved.
 //
 
+#import <cv.h>
 #import "MagicCircle.h"
 
 @implementation MagicCircle
@@ -25,7 +26,6 @@
 - (void)addPoint:(CGPoint)point{
   KWVector* vector = [KWVector vectorWithPoint:point];
   [drawPoints_ addObject:vector];
-  int count = [drawPoints_ count];
 }
 
 - (void)draw{
