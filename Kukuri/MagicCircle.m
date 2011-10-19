@@ -9,10 +9,7 @@
 #import <opencv2/imgproc/imgproc_c.h>
 #import <opencv2/objdetect/objdetect.hpp>
 #import "MagicCircle.h"
-
-@interface MagicCircle()
-- (NSData*)convertToData;
-@end
+#import "ImageUtil.h"
 
 @implementation MagicCircle
 @synthesize drawPoints=drawPoints_;
@@ -45,20 +42,30 @@
 }
 
 - (void)match{
-  NSData* data = [self convertToData];
-  
-}
-
-- (NSData*)convertToData{
-  int backingWidth = 1024;   // OpenGLのバッファの幅
+  ImageUtil* util = [ImageUtil instance];
+  /*int backingWidth = 1024;   // OpenGLのバッファの幅
   int backingHeight = 768;   // OpenGLのバッファの高さ
-  
   NSInteger myDataLength = backingWidth * backingHeight * 4;
   GLubyte *buffer = (GLubyte *) malloc(myDataLength);
+  IplImage* canvas;
   glReadPixels(0, 0, backingWidth, backingHeight, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
+  [util convertToCV:buffer to:canvas width:backingWidth height:backingHeight channels:4];
   
-  NSData* data = [NSData dataWithBytes:buffer length:myDataLength];
-  return data;
+  */
+  
+  // loading template file.
+  NSString* path = [[NSBundle mainBundle] pathForResource:@"type1" ofType:@"png"];
+  UIImage* test = [UIImage imageWithContentsOfFile:path];
+  NSLog(@"%f", test.size.width);
+  IplImage* template = [util createIplImageFromUIImage:test];
+  IplImage* canvas = [util createIplImageFromUIImage:test];
+  
+  const double result = cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 0);
+  
+  NSLog(@"%f", result);
+  
+  cvReleaseImage(&canvas);
+  cvReleaseImage(&template);
 }
 
 @end

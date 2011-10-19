@@ -47,6 +47,7 @@
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
+  [currentCircle_ match];
   self.currentCircle = nil;
 }
 

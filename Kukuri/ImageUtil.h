@@ -13,12 +13,15 @@
 @interface ImageUtil : KWSingleton
 
 // convert IplImage(OpenCV) to GLubyte(OpenGL).
-- (GLubyte*)convertToGL:(IplImage*)image;
+- (GLubyte*)convertToGL:(IplImage*)image 
+                     to:(GLubyte*)conv;
 
 - (IplImage*)convertToCV:(GLubyte*)image
                       to:(IplImage*)conv
                    width:(int)width 
                   height:(int)height 
                  channels:(int)channels;
+
+- (IplImage*)createIplImageFromUIImage:(UIImage*)image;
 
 @end

@@ -10,23 +10,23 @@
 
 @implementation ImageUtil
 
-- (GLubyte*)convertToGL:(IplImage *)image{
+- (GLubyte*)convertToGL:(IplImage *)image to:(GLubyte *)conv{
   int w = image->width;
   int h = image->height;
   int channels = image->nChannels;
   
-  GLubyte* imageData = (GLubyte*)malloc(w*h*channels);
+  conv = (GLubyte*)malloc(w*h*channels);
   
   for(int i = 0; i < w * h * channels; i += channels){
     // IplImage contains pixelData as BGR order.
-    imageData[i]     = image->imageData[i+2];   // R
-    imageData[i+1]   = image->imageData[i+1];   // G
-    imageData[i+2]   = image->imageData[i];     // B
+    conv[i]     = image->imageData[i+2];   // R
+    conv[i+1]   = image->imageData[i+1];   // G
+    conv[i+2]   = image->imageData[i];     // B
     if(channels > 3){
-      imageData[i+3] = image->imageData[i+3]; // A
+      conv[i+3] = image->imageData[i+3]; // A
     }
   }
-  return imageData;
+  return conv;
 }
 
 - (IplImage*)convertToCV:(GLubyte *)image 
@@ -34,7 +34,8 @@
                    width:(int)width 
                   height:(int)height 
                  channels:(int)channels{
-  conv = cvCreateImage(cvSize(width, height), IPL_DEPTH_8S, 3);
+  conv = cvCreateImage(cvSize(width, height), IPL_DEPTH_8S, channels);
+  NSLog(@"%d", conv->imageData[0]);
   for(int i = 0; i < width * height * channels; i += channels){
     conv->imageData[i]     = image[i+2];
     conv->imageData[i+1]   = image[i+1];
@@ -44,6 +45,25 @@
     }
   }
   return conv;
+}
+
+- (IplImage *)createIplImageFromUIImage:(UIImage *)image {
+	CGImageRef imageRef = image.CGImage;
+  
+	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+	IplImage *iplimage = cvCreateImage(cvSize(image.size.width, image.size.height), IPL_DEPTH_8U, 4);
+	CGContextRef contextRef = CGBitmapContextCreate(iplimage->imageData, iplimage->width, iplimage->height,
+                                                  iplimage->depth, iplimage->widthStep,
+                                                  colorSpace, kCGImageAlphaPremultipliedLast|kCGBitmapByteOrderDefault);
+	CGContextDrawImage(contextRef, CGRectMake(0, 0, image.size.width, image.size.height), imageRef);
+	CGContextRelease(contextRef);
+	CGColorSpaceRelease(colorSpace);
+  
+	IplImage *ret = cvCreateImage(cvGetSize(iplimage), IPL_DEPTH_8U, 1);
+	cvCvtColor(iplimage, ret, CV_RGBA2GRAY);
+	cvReleaseImage(&iplimage);
+  
+	return ret;
 }
 
 @end
