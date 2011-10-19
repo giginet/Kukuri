@@ -122,16 +122,18 @@
 		07D1B620144E4E3C00306892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B61F144E4E3C00306892 /* AppDelegate.m */; };
 		07D1B623144E4E3C00306892 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B622144E4E3C00306892 /* RootViewController.m */; };
 		07D1B62F144E4ECE00306892 /* CanvasScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B62E144E4ECE00306892 /* CanvasScene.m */; };
-		07D1B66F144E688100306892 /* KWAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B65B144E688100306892 /* KWAnimation.m */; };
-		07D1B670144E688100306892 /* KWMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B65E144E688100306892 /* KWMusicManager.m */; };
-		07D1B671144E688100306892 /* KWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B660144E688100306892 /* KWScene.m */; };
-		07D1B672144E688100306892 /* KWSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B662144E688100306892 /* KWSingleton.m */; };
-		07D1B673144E688100306892 /* KWSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B664144E688100306892 /* KWSprite.m */; };
-		07D1B674144E688100306892 /* KWState.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B666144E688100306892 /* KWState.m */; };
-		07D1B675144E688100306892 /* KWStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B668144E688100306892 /* KWStateManager.m */; };
-		07D1B676144E688100306892 /* KWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B66A144E688100306892 /* KWTimer.m */; };
-		07D1B677144E688100306892 /* KWTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B66C144E688100306892 /* KWTimerLabel.m */; };
-		07D1B678144E688100306892 /* KWVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B66E144E688100306892 /* KWVector.m */; };
+		07D1B694144E6F5200306892 /* KWMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B67C144E6F5200306892 /* KWMusicManager.m */; };
+		07D1B695144E6F5200306892 /* README.rst in Resources */ = {isa = PBXBuildFile; fileRef = 07D1B67E144E6F5200306892 /* README.rst */; };
+		07D1B696144E6F5200306892 /* KWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B681144E6F5200306892 /* KWScene.m */; };
+		07D1B697144E6F5200306892 /* KWState.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B683144E6F5200306892 /* KWState.m */; };
+		07D1B698144E6F5200306892 /* KWStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B685144E6F5200306892 /* KWStateManager.m */; };
+		07D1B699144E6F5200306892 /* KWAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B688144E6F5200306892 /* KWAnimation.m */; };
+		07D1B69A144E6F5200306892 /* KWSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B68A144E6F5200306892 /* KWSprite.m */; };
+		07D1B69B144E6F5200306892 /* KWTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B68C144E6F5200306892 /* KWTimerLabel.m */; };
+		07D1B69C144E6F5200306892 /* KWSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B68F144E6F5200306892 /* KWSingleton.m */; };
+		07D1B69D144E6F5200306892 /* KWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B691144E6F5200306892 /* KWTimer.m */; };
+		07D1B69E144E6F5200306892 /* KWVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B693144E6F5200306892 /* KWVector.m */; };
+		07D1B6A1144E716400306892 /* CanvasLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D1B6A0144E716400306892 /* CanvasLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -370,27 +372,30 @@
 		07D1B627144E4E3C00306892 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		07D1B62D144E4ECE00306892 /* CanvasScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasScene.h; sourceTree = "<group>"; };
 		07D1B62E144E4ECE00306892 /* CanvasScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasScene.m; sourceTree = "<group>"; };
-		07D1B65A144E688100306892 /* KWAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWAnimation.h; sourceTree = "<group>"; };
-		07D1B65B144E688100306892 /* KWAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWAnimation.m; sourceTree = "<group>"; };
-		07D1B65C144E688100306892 /* kwing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kwing.h; sourceTree = "<group>"; };
-		07D1B65D144E688100306892 /* KWMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWMusicManager.h; sourceTree = "<group>"; };
-		07D1B65E144E688100306892 /* KWMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWMusicManager.m; sourceTree = "<group>"; };
-		07D1B65F144E688100306892 /* KWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWScene.h; sourceTree = "<group>"; };
-		07D1B660144E688100306892 /* KWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWScene.m; sourceTree = "<group>"; };
-		07D1B661144E688100306892 /* KWSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWSingleton.h; sourceTree = "<group>"; };
-		07D1B662144E688100306892 /* KWSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWSingleton.m; sourceTree = "<group>"; };
-		07D1B663144E688100306892 /* KWSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWSprite.h; sourceTree = "<group>"; };
-		07D1B664144E688100306892 /* KWSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWSprite.m; sourceTree = "<group>"; };
-		07D1B665144E688100306892 /* KWState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWState.h; sourceTree = "<group>"; };
-		07D1B666144E688100306892 /* KWState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWState.m; sourceTree = "<group>"; };
-		07D1B667144E688100306892 /* KWStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWStateManager.h; sourceTree = "<group>"; };
-		07D1B668144E688100306892 /* KWStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWStateManager.m; sourceTree = "<group>"; };
-		07D1B669144E688100306892 /* KWTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWTimer.h; sourceTree = "<group>"; };
-		07D1B66A144E688100306892 /* KWTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWTimer.m; sourceTree = "<group>"; };
-		07D1B66B144E688100306892 /* KWTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWTimerLabel.h; sourceTree = "<group>"; };
-		07D1B66C144E688100306892 /* KWTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWTimerLabel.m; sourceTree = "<group>"; };
-		07D1B66D144E688100306892 /* KWVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWVector.h; sourceTree = "<group>"; };
-		07D1B66E144E688100306892 /* KWVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWVector.m; sourceTree = "<group>"; };
+		07D1B67B144E6F5200306892 /* KWMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWMusicManager.h; sourceTree = "<group>"; };
+		07D1B67C144E6F5200306892 /* KWMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWMusicManager.m; sourceTree = "<group>"; };
+		07D1B67D144E6F5200306892 /* kwing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kwing.h; sourceTree = "<group>"; };
+		07D1B67E144E6F5200306892 /* README.rst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.rst; sourceTree = "<group>"; };
+		07D1B680144E6F5200306892 /* KWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWScene.h; sourceTree = "<group>"; };
+		07D1B681144E6F5200306892 /* KWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWScene.m; sourceTree = "<group>"; };
+		07D1B682144E6F5200306892 /* KWState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWState.h; sourceTree = "<group>"; };
+		07D1B683144E6F5200306892 /* KWState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWState.m; sourceTree = "<group>"; };
+		07D1B684144E6F5200306892 /* KWStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWStateManager.h; sourceTree = "<group>"; };
+		07D1B685144E6F5200306892 /* KWStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWStateManager.m; sourceTree = "<group>"; };
+		07D1B687144E6F5200306892 /* KWAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWAnimation.h; sourceTree = "<group>"; };
+		07D1B688144E6F5200306892 /* KWAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWAnimation.m; sourceTree = "<group>"; };
+		07D1B689144E6F5200306892 /* KWSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWSprite.h; sourceTree = "<group>"; };
+		07D1B68A144E6F5200306892 /* KWSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWSprite.m; sourceTree = "<group>"; };
+		07D1B68B144E6F5200306892 /* KWTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWTimerLabel.h; sourceTree = "<group>"; };
+		07D1B68C144E6F5200306892 /* KWTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWTimerLabel.m; sourceTree = "<group>"; };
+		07D1B68E144E6F5200306892 /* KWSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWSingleton.h; sourceTree = "<group>"; };
+		07D1B68F144E6F5200306892 /* KWSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWSingleton.m; sourceTree = "<group>"; };
+		07D1B690144E6F5200306892 /* KWTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWTimer.h; sourceTree = "<group>"; };
+		07D1B691144E6F5200306892 /* KWTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWTimer.m; sourceTree = "<group>"; };
+		07D1B692144E6F5200306892 /* KWVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWVector.h; sourceTree = "<group>"; };
+		07D1B693144E6F5200306892 /* KWVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWVector.m; sourceTree = "<group>"; };
+		07D1B69F144E716400306892 /* CanvasLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasLayer.h; sourceTree = "<group>"; };
+		07D1B6A0144E716400306892 /* CanvasLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +452,8 @@
 		07D1B4CC144E4E3B00306892 /* Kukuri */ = {
 			isa = PBXGroup;
 			children = (
+				07D1B69F144E716400306892 /* CanvasLayer.h */,
+				07D1B6A0144E716400306892 /* CanvasLayer.m */,
 				07D1B61E144E4E3C00306892 /* AppDelegate.h */,
 				07D1B61F144E4E3C00306892 /* AppDelegate.m */,
 				07D1B621144E4E3C00306892 /* RootViewController.h */,
@@ -485,7 +492,7 @@
 				07D1B5E6144E4E3C00306892 /* LICENSE_CocosDenshion.txt */,
 				07D1B5F1144E4E3C00306892 /* LICENSE_TouchJSON.txt */,
 				07D1B619144E4E3C00306892 /* LICENSE_FontLabel.txt */,
-				07D1B659144E688100306892 /* kwing */,
+				07D1B679144E6F5200306892 /* kwing */,
 				07D1B4E2144E4E3B00306892 /* cocos2d */,
 				07D1B5D8144E4E3C00306892 /* CocosDenshion */,
 				07D1B5E7144E4E3C00306892 /* cocoslive */,
@@ -790,32 +797,66 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		07D1B659144E688100306892 /* kwing */ = {
+		07D1B679144E6F5200306892 /* kwing */ = {
 			isa = PBXGroup;
 			children = (
-				07D1B65A144E688100306892 /* KWAnimation.h */,
-				07D1B65B144E688100306892 /* KWAnimation.m */,
-				07D1B65C144E688100306892 /* kwing.h */,
-				07D1B65D144E688100306892 /* KWMusicManager.h */,
-				07D1B65E144E688100306892 /* KWMusicManager.m */,
-				07D1B65F144E688100306892 /* KWScene.h */,
-				07D1B660144E688100306892 /* KWScene.m */,
-				07D1B661144E688100306892 /* KWSingleton.h */,
-				07D1B662144E688100306892 /* KWSingleton.m */,
-				07D1B663144E688100306892 /* KWSprite.h */,
-				07D1B664144E688100306892 /* KWSprite.m */,
-				07D1B665144E688100306892 /* KWState.h */,
-				07D1B666144E688100306892 /* KWState.m */,
-				07D1B667144E688100306892 /* KWStateManager.h */,
-				07D1B668144E688100306892 /* KWStateManager.m */,
-				07D1B669144E688100306892 /* KWTimer.h */,
-				07D1B66A144E688100306892 /* KWTimer.m */,
-				07D1B66B144E688100306892 /* KWTimerLabel.h */,
-				07D1B66C144E688100306892 /* KWTimerLabel.m */,
-				07D1B66D144E688100306892 /* KWVector.h */,
-				07D1B66E144E688100306892 /* KWVector.m */,
+				07D1B67A144E6F5200306892 /* audio */,
+				07D1B67D144E6F5200306892 /* kwing.h */,
+				07D1B67E144E6F5200306892 /* README.rst */,
+				07D1B67F144E6F5200306892 /* scene */,
+				07D1B686144E6F5200306892 /* sprite */,
+				07D1B68D144E6F5200306892 /* util */,
 			);
-			path = kwing;
+			name = kwing;
+			path = libs/kwing;
+			sourceTree = "<group>";
+		};
+		07D1B67A144E6F5200306892 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				07D1B67B144E6F5200306892 /* KWMusicManager.h */,
+				07D1B67C144E6F5200306892 /* KWMusicManager.m */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		07D1B67F144E6F5200306892 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				07D1B680144E6F5200306892 /* KWScene.h */,
+				07D1B681144E6F5200306892 /* KWScene.m */,
+				07D1B682144E6F5200306892 /* KWState.h */,
+				07D1B683144E6F5200306892 /* KWState.m */,
+				07D1B684144E6F5200306892 /* KWStateManager.h */,
+				07D1B685144E6F5200306892 /* KWStateManager.m */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		07D1B686144E6F5200306892 /* sprite */ = {
+			isa = PBXGroup;
+			children = (
+				07D1B687144E6F5200306892 /* KWAnimation.h */,
+				07D1B688144E6F5200306892 /* KWAnimation.m */,
+				07D1B689144E6F5200306892 /* KWSprite.h */,
+				07D1B68A144E6F5200306892 /* KWSprite.m */,
+				07D1B68B144E6F5200306892 /* KWTimerLabel.h */,
+				07D1B68C144E6F5200306892 /* KWTimerLabel.m */,
+			);
+			path = sprite;
+			sourceTree = "<group>";
+		};
+		07D1B68D144E6F5200306892 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				07D1B68E144E6F5200306892 /* KWSingleton.h */,
+				07D1B68F144E6F5200306892 /* KWSingleton.m */,
+				07D1B690144E6F5200306892 /* KWTimer.h */,
+				07D1B691144E6F5200306892 /* KWTimer.m */,
+				07D1B692144E6F5200306892 /* KWVector.h */,
+				07D1B693144E6F5200306892 /* KWVector.m */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -877,6 +918,7 @@
 				07D1B4DB144E4E3B00306892 /* Icon.png in Resources */,
 				07D1B4DD144E4E3B00306892 /* Icon@2x.png in Resources */,
 				07D1B4E0144E4E3B00306892 /* iTunesArtwork in Resources */,
+				07D1B695144E6F5200306892 /* README.rst in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,16 +1027,17 @@
 				07D1B620144E4E3C00306892 /* AppDelegate.m in Sources */,
 				07D1B623144E4E3C00306892 /* RootViewController.m in Sources */,
 				07D1B62F144E4ECE00306892 /* CanvasScene.m in Sources */,
-				07D1B66F144E688100306892 /* KWAnimation.m in Sources */,
-				07D1B670144E688100306892 /* KWMusicManager.m in Sources */,
-				07D1B671144E688100306892 /* KWScene.m in Sources */,
-				07D1B672144E688100306892 /* KWSingleton.m in Sources */,
-				07D1B673144E688100306892 /* KWSprite.m in Sources */,
-				07D1B674144E688100306892 /* KWState.m in Sources */,
-				07D1B675144E688100306892 /* KWStateManager.m in Sources */,
-				07D1B676144E688100306892 /* KWTimer.m in Sources */,
-				07D1B677144E688100306892 /* KWTimerLabel.m in Sources */,
-				07D1B678144E688100306892 /* KWVector.m in Sources */,
+				07D1B694144E6F5200306892 /* KWMusicManager.m in Sources */,
+				07D1B696144E6F5200306892 /* KWScene.m in Sources */,
+				07D1B697144E6F5200306892 /* KWState.m in Sources */,
+				07D1B698144E6F5200306892 /* KWStateManager.m in Sources */,
+				07D1B699144E6F5200306892 /* KWAnimation.m in Sources */,
+				07D1B69A144E6F5200306892 /* KWSprite.m in Sources */,
+				07D1B69B144E6F5200306892 /* KWTimerLabel.m in Sources */,
+				07D1B69C144E6F5200306892 /* KWSingleton.m in Sources */,
+				07D1B69D144E6F5200306892 /* KWTimer.m in Sources */,
+				07D1B69E144E6F5200306892 /* KWVector.m in Sources */,
+				07D1B6A1144E716400306892 /* CanvasLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
