@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078F41B3144F533700165CDF /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 078F41B2144F533700165CDF /* ImageUtil.m */; };
+		078F4209144F5E8D00165CDF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F4208144F5E8D00165CDF /* Accelerate.framework */; };
+		078F422D144F646200165CDF /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F422A144F646200165CDF /* libopencv_core.a */; };
+		078F422E144F646200165CDF /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F422B144F646200165CDF /* libopencv_imgproc.a */; };
+		078F422F144F646200165CDF /* libopencv_objdetect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F422C144F646200165CDF /* libopencv_objdetect.a */; };
 		07D1B4BD144E4E3B00306892 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BC144E4E3B00306892 /* QuartzCore.framework */; };
 		07D1B4BF144E4E3B00306892 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BE144E4E3B00306892 /* OpenGLES.framework */; };
 		07D1B4C1144E4E3B00306892 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4C0144E4E3B00306892 /* OpenAL.framework */; };
@@ -138,6 +143,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		078F41B1144F533700165CDF /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
+		078F41B2144F533700165CDF /* ImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
+		078F4208144F5E8D00165CDF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		078F422A144F646200165CDF /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_core.a; sourceTree = "<group>"; };
+		078F422B144F646200165CDF /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
+		078F422C144F646200165CDF /* libopencv_objdetect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_objdetect.a; sourceTree = "<group>"; };
 		07D1B4B8144E4E3B00306892 /* Kukuri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kukuri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D1B4BC144E4E3B00306892 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07D1B4BE144E4E3B00306892 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -406,6 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078F4209144F5E8D00165CDF /* Accelerate.framework in Frameworks */,
 				07D1B4BD144E4E3B00306892 /* QuartzCore.framework in Frameworks */,
 				07D1B4BF144E4E3B00306892 /* OpenGLES.framework in Frameworks */,
 				07D1B4C1144E4E3B00306892 /* OpenAL.framework in Frameworks */,
@@ -414,15 +426,39 @@
 				07D1B4C7144E4E3B00306892 /* UIKit.framework in Frameworks */,
 				07D1B4C9144E4E3B00306892 /* Foundation.framework in Frameworks */,
 				07D1B4CB144E4E3B00306892 /* CoreGraphics.framework in Frameworks */,
+				078F422D144F646200165CDF /* libopencv_core.a in Frameworks */,
+				078F422E144F646200165CDF /* libopencv_imgproc.a in Frameworks */,
+				078F422F144F646200165CDF /* libopencv_objdetect.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078F41AF144F532100165CDF /* util */ = {
+			isa = PBXGroup;
+			children = (
+				078F41B1144F533700165CDF /* ImageUtil.h */,
+				078F41B2144F533700165CDF /* ImageUtil.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		078F4229144F646200165CDF /* cv */ = {
+			isa = PBXGroup;
+			children = (
+				078F422A144F646200165CDF /* libopencv_core.a */,
+				078F422B144F646200165CDF /* libopencv_imgproc.a */,
+				078F422C144F646200165CDF /* libopencv_objdetect.a */,
+			);
+			name = cv;
+			path = libs/opencv_simulator/lib;
+			sourceTree = "<group>";
+		};
 		07D1B4AD144E4E3B00306892 = {
 			isa = PBXGroup;
 			children = (
+				078F4208144F5E8D00165CDF /* Accelerate.framework */,
 				07D1B4CC144E4E3B00306892 /* Kukuri */,
 				07D1B4BB144E4E3B00306892 /* Frameworks */,
 				07D1B4B9144E4E3B00306892 /* Products */,
@@ -455,6 +491,7 @@
 		07D1B4CC144E4E3B00306892 /* Kukuri */ = {
 			isa = PBXGroup;
 			children = (
+				078F41AF144F532100165CDF /* util */,
 				07D1B6A2144E74FD00306892 /* MagicCircle.h */,
 				07D1B6A3144E74FD00306892 /* MagicCircle.m */,
 				07D1B69F144E716400306892 /* CanvasLayer.h */,
@@ -497,6 +534,7 @@
 				07D1B5E6144E4E3C00306892 /* LICENSE_CocosDenshion.txt */,
 				07D1B5F1144E4E3C00306892 /* LICENSE_TouchJSON.txt */,
 				07D1B619144E4E3C00306892 /* LICENSE_FontLabel.txt */,
+				078F4229144F646200165CDF /* cv */,
 				07D1B679144E6F5200306892 /* kwing */,
 				07D1B4E2144E4E3B00306892 /* cocos2d */,
 				07D1B5D8144E4E3C00306892 /* CocosDenshion */,
@@ -1044,6 +1082,7 @@
 				07D1B69E144E6F5200306892 /* KWVector.m in Sources */,
 				07D1B6A1144E716400306892 /* CanvasLayer.m in Sources */,
 				07D1B6A4144E74FD00306892 /* MagicCircle.m in Sources */,
+				078F41B3144F533700165CDF /* ImageUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1104,10 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/include\"/**",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/lib\"/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				SDKROOT = iphoneos;
 			};
@@ -1080,6 +1123,10 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"$(SRCROOT)/Kukuri/libs/opencv_device/include\"/**",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_device/lib\"/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -1095,10 +1142,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Kukuri/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				"HEADER_SEARCH_PATHS[arch=*]" = "/usr/local/Cellar/opencv/**";
 				INFOPLIST_FILE = Kukuri/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				OTHER_LDFLAGS = "-lz";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Kukuri/libs/cv/lib\"",
+					"\"$(SRCROOT)/Kukuri/libs/cv/include\"/**",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -1113,10 +1168,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Kukuri/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				"HEADER_SEARCH_PATHS[arch=*]" = "/usr/local/Cellar/opencv/**";
 				INFOPLIST_FILE = Kukuri/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				OTHER_LDFLAGS = "-lz";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Kukuri/libs/cv/lib\"",
+					"\"$(SRCROOT)/Kukuri/libs/cv/include\"/**",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
