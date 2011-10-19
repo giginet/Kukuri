@@ -1,0 +1,3 @@
+[submodule "Kukuri/libs/kwing"]
+	path = Kukuri/libs/kwing
+	url = git@github.com:giginet/kwing.git
