@@ -3,7 +3,7 @@
 //  Kukuri
 //
 //  Created by giginet on 11/10/19.
-//  Copyright __MyCompanyName__ 2011年. All rights reserved.
+//  Copyright Kawaz 2011. All rights reserved.
 //
 
 #ifndef __GAME_CONFIG_H
@@ -19,9 +19,8 @@
 #define kGameAutorotationCCDirector 1
 #define kGameAutorotationUIViewController 2
 #define FPS 60 // FPS
-#define SKIPTITLE NO // タイトル画面をスキップするか（デバッグ用）
-#define SHOW_FPS NO // FPSを表示するか（デバッグ用）
-
+#define SKIPTITLE NO
+#define SHOW_FPS NO
 //
 // Define here the type of autorotation that you want for your game
 //

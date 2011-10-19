@@ -3,7 +3,7 @@
 //  Kukuri
 //
 //  Created by giginet on 11/10/19.
-//  Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Kawaz. All rights reserved.
 //
 
 #import "kwing.h"
