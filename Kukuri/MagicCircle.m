@@ -38,8 +38,8 @@
   }else if([drawPoints_ count] == 2){
     KWVector* first = [drawPoints_ objectAtIndex:0];
     KWVector* second = [drawPoints_ objectAtIndex:1];
-    width_ = abs(first.x -second.x);
-    height_ = abs(first.y = second.y);
+    width_ = abs(first.x - second.x);
+    height_ = abs(first.y - second.y);
   }else{
     double xMin = origin_.x;
     double yMin = origin_.y;
@@ -47,11 +47,13 @@
     double yMax = origin_.y + height_;
     if(vector.x < xMin){
       origin_.x = vector.x;
+      width_ = xMax - vector.x;
     }else if(vector.x > xMax){
       width_ = vector.x - origin_.x;
     }
     if(vector.y < yMin){
       origin_.y = vector.y;
+      height_ = yMax - vector.y;
     }else if(vector.y > yMax){
       height_ = vector.y - origin_.y;
     }
@@ -59,6 +61,8 @@
 }
 
 - (void)draw{
+  glColor4f(0.0, 1.0, 0.0, 1.0);
+  glLineWidth(4.0f);
   int count = [drawPoints_ count];
   if(count > 1){
     for(int i = 0; i < count-1; ++i){
@@ -67,6 +71,12 @@
       ccDrawLine(begin.point, end.point);
     }
   }
+  glColor4f(1.0, 0.0, 0.0, 1.0);
+  glLineWidth(4.0f);
+  ccDrawLine(origin_.point, ccp(origin_.x, origin_.y + height_));
+  ccDrawLine(ccp(origin_.x, origin_.y + height_), ccp(origin_.x + width_, origin_.y + height_));
+  ccDrawLine(origin_.point, ccp(origin_.x + width_, origin_.y));
+  ccDrawLine(ccp(origin_.x + width_, origin_.y), ccp(origin_.x + width_, origin_.y + height_));
 }
 
 - (void)match{

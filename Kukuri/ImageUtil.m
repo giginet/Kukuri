@@ -52,6 +52,9 @@
     cvCvtColor(conv, ret, CV_RGBA2BGRA);
   }
 	cvReleaseImage(&conv);
+  // flip
+  cvFlip(ret, ret, 0);
+  
   return ret;
 }
 
@@ -70,11 +73,12 @@
 	IplImage *ret = cvCreateImage(cvGetSize(iplimage), IPL_DEPTH_8U, 1);
 	cvCvtColor(iplimage, ret, CV_RGBA2GRAY);
 	cvReleaseImage(&iplimage);
-  
+
 	return ret;
 }
 
 - (CGImageRef)CGImageFromIplImage:(IplImage *)image {
+  
   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
   // CGImageのためのバッファを確保
   NSData *data =
@@ -88,6 +92,7 @@
                                       colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
                                       provider, NULL, false, kCGRenderingIntentDefault
   );
+  
   return imageRef;
 }
 

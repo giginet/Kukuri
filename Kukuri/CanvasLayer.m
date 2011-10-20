@@ -21,8 +21,6 @@
 }
 
 - (void)draw{
-  glColor4f(0.0, 1.0, 0.0, 1.0);
-  glLineWidth(4.0f);
   for(MagicCircle* circle in circles_){
     [circle draw];
   }
