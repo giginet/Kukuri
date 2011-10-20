@@ -11,6 +11,13 @@
 #import "MagicCircle.h"
 #import "ImageUtil.h"
 
+@interface MagicCircle()
+- (IplImage*)drawOnIplImage:(NSMutableArray*)points 
+                      width:(int)width 
+                     height:(int)height 
+                   channels:(int)channels;
+@end
+
 @implementation MagicCircle
 @synthesize drawPoints=drawPoints_;
 
@@ -83,44 +90,49 @@
   NSLog(@"width:%d, height:%d", width_, height_);
   if(width_ <= 0 || height_ <= 0) return;
   ImageUtil* util = [ImageUtil instance];
-  NSInteger myDataLength = width_ * height_ * 4;
-  GLubyte *buffer = (GLubyte *) malloc(myDataLength);
-  IplImage* canvas;
   
-  glReadPixels(origin_.x, origin_.y, width_, height_, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
-  canvas = [util convertToCV:buffer width:width_ height:height_ channels:4];
-  IplImage *ret = cvCreateImage(cvGetSize(canvas), IPL_DEPTH_8U, 1);
-	cvCvtColor(canvas, ret, CV_RGBA2GRAY);
-	cvReleaseImage(&canvas);
-  
+  IplImage* canvas = [self drawOnIplImage:drawPoints_ width:width_ height:height_ channels:1];
   
   // loading template file.
   NSString* path = [[NSBundle mainBundle] pathForResource:@"type4" ofType:@"jpg"];
   UIImage* test = [UIImage imageWithContentsOfFile:path];
   IplImage* template = [util createIplImageFromUIImage:test];
   
-  NSLog(@"%f", cvMatchShapes(ret, template, CV_CONTOURS_MATCH_I1, 0));
-  NSLog(@"%f", cvMatchShapes(ret, template, CV_CONTOURS_MATCH_I2, 0));
-  NSLog(@"%f", cvMatchShapes(ret, template, CV_CONTOURS_MATCH_I3, 0));
+  NSLog(@"%f", cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 0));
+  NSLog(@"%f", cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I2, 0));
+  NSLog(@"%f", cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I3, 0));
   
-  cvReleaseImage(&ret);
+  cvReleaseImage(&canvas);
   cvReleaseImage(&template);
 }
 
 - (CCSprite*)createSprite{
   if(width_ <= 0 || height_ <= 0) return nil;
   ImageUtil* util = [ImageUtil instance];
-  NSInteger myDataLength = width_ * height_ * 4;
-  GLubyte *buffer = (GLubyte *) malloc(myDataLength);
-  IplImage* canvas;
-  
-  glReadPixels(origin_.x, origin_.y, width_, height_, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
-  canvas = [util convertToCV:buffer width:width_ height:height_ channels:4];
-  /*IplImage *ret = cvCreateImage(cvGetSize(canvas), IPL_DEPTH_8U, 1);
-	cvCvtColor(canvas, ret, CV_RGBA2GRAY);
-	cvReleaseImage(&canvas);*/
+  IplImage* canvas = [self drawOnIplImage:drawPoints_ width:width_ height:height_ channels:3];
   
   return [util createSpriteFromIplImage:canvas];
+}
+
+- (IplImage*)drawOnIplImage:(NSMutableArray *)points 
+                      width:(int)width 
+                     height:(int)height 
+                   channels:(int)channels{
+  IplImage* surface = cvCreateImage(cvSize(width, height), IPL_DEPTH_8U, channels);
+  int count = [drawPoints_ count];
+  if(count > 1){
+    for(int i = 0; i < count-1; ++i){
+      KWVector* begin = (KWVector*)[drawPoints_ objectAtIndex:i];
+      KWVector* end   = (KWVector*)[drawPoints_ objectAtIndex:i+1];
+      CvPoint b, e;
+      b.x = begin.x;
+      b.y = begin.y;
+      e.x = end.x;
+      e.y = end.y;
+      cvLine(surface, b, e, CV_RGB(0.0, 0.0, 0.0), channels, CV_AA, 0);
+    }
+  }
+  return surface;
 }
 
 @end
