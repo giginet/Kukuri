@@ -10,41 +10,45 @@
 
 @implementation ImageUtil
 
-- (GLubyte*)convertToGL:(IplImage *)image to:(GLubyte *)conv{
+- (GLubyte*)convertToGL:(IplImage *)image{
   int w = image->width;
   int h = image->height;
   int channels = image->nChannels;
   
-  conv = (GLubyte*)malloc(w*h*channels);
+  GLubyte* conv = (GLubyte*)malloc(w*h*channels);
+  IplImage *ret = cvCreateImage(cvGetSize(image), IPL_DEPTH_8U, channels);
+  if(channels == 3){
+    cvCvtColor(image, ret, CV_BGR2RGB);
+  }else{
+    cvCvtColor(image, ret, CV_BGRA2RGBA);
+  }
+	cvReleaseImage(&image);
   
-  for(int i = 0; i < w * h * channels; i += channels){
-    // IplImage contains pixelData as BGR order.
-    conv[i]     = image->imageData[i+2];   // R
-    conv[i+1]   = image->imageData[i+1];   // G
-    conv[i+2]   = image->imageData[i];     // B
-    if(channels > 3){
-      conv[i+3] = image->imageData[i+3]; // A
-    }
+  for(int i = 0; i < w * h * channels; ++i){
+    conv[i]     = image->imageData[i];
   }
   return conv;
 }
 
 - (IplImage*)convertToCV:(GLubyte *)image 
-                      to:(IplImage*)conv
                    width:(int)width 
                   height:(int)height 
                  channels:(int)channels{
-  conv = cvCreateImage(cvSize(width, height), IPL_DEPTH_8S, channels);
-  NSLog(@"%d", conv->imageData[0]);
+  
+  IplImage* conv = cvCreateImage(cvSize(width, height), IPL_DEPTH_8U, channels);
   for(int i = 0; i < width * height * channels; i += channels){
-    conv->imageData[i]     = image[i+2];
-    conv->imageData[i+1]   = image[i+1];
-    conv->imageData[i+2]   = image[i];
-    if(channels > 3){
-      conv->imageData[i+3] = image[i+3];
-    }
+    conv->imageData[i]     = image[i];
   }
-  return conv;
+  
+  IplImage *ret = cvCreateImage(cvSize(width, height), IPL_DEPTH_8U, channels);
+  
+  if(channels == 3){
+    cvCvtColor(conv, ret, CV_RGB2BGR);
+  }else{
+    cvCvtColor(conv, ret, CV_RGBA2BGRA);
+  }
+	cvReleaseImage(&conv);
+  return ret;
 }
 
 - (IplImage *)createIplImageFromUIImage:(UIImage *)image {

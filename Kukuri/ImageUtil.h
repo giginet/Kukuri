@@ -13,11 +13,9 @@
 @interface ImageUtil : KWSingleton
 
 // convert IplImage(OpenCV) to GLubyte(OpenGL).
-- (GLubyte*)convertToGL:(IplImage*)image 
-                     to:(GLubyte*)conv;
+- (GLubyte*)convertToGL:(IplImage*)image;
 
 - (IplImage*)convertToCV:(GLubyte*)image
-                      to:(IplImage*)conv
                    width:(int)width 
                   height:(int)height 
                  channels:(int)channels;

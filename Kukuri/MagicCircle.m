@@ -17,6 +17,9 @@
 - (id)init{
   if(self = [super init]){
     self.drawPoints = [NSMutableArray array];
+    width_ = 0;
+    height_ = 0;
+    origin_ = nil;
   }
   return self;
 }
@@ -28,6 +31,31 @@
 - (void)addPoint:(CGPoint)point{
   KWVector* vector = [KWVector vectorWithPoint:point];
   [drawPoints_ addObject:vector];
+  if(!origin_){
+    origin_ = [vector clone];
+    width_ = 0;
+    height_ = 0;
+  }else if([drawPoints_ count] == 2){
+    KWVector* first = [drawPoints_ objectAtIndex:0];
+    KWVector* second = [drawPoints_ objectAtIndex:1];
+    width_ = abs(first.x -second.x);
+    height_ = abs(first.y = second.y);
+  }else{
+    double xMin = origin_.x;
+    double yMin = origin_.y;
+    double xMax = origin_.x + width_;
+    double yMax = origin_.y + height_;
+    if(vector.x < xMin){
+      origin_.x = vector.x;
+    }else if(vector.x > xMax){
+      width_ = vector.x - origin_.x;
+    }
+    if(vector.y < yMin){
+      origin_.y = vector.y;
+    }else if(vector.y > yMax){
+      height_ = vector.y - origin_.y;
+    }
+  }
 }
 
 - (void)draw{
@@ -42,29 +70,30 @@
 }
 
 - (void)match{
+  NSLog(@"width:%d, height:%d", width_, height_);
+  if(width_ <= 0 || height_ <= 0) return;
   ImageUtil* util = [ImageUtil instance];
-  /*int backingWidth = 1024;   // OpenGLのバッファの幅
-  int backingHeight = 768;   // OpenGLのバッファの高さ
-  NSInteger myDataLength = backingWidth * backingHeight * 4;
+  NSInteger myDataLength = width_ * height_ * 4;
   GLubyte *buffer = (GLubyte *) malloc(myDataLength);
   IplImage* canvas;
-  glReadPixels(0, 0, backingWidth, backingHeight, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
-  [util convertToCV:buffer to:canvas width:backingWidth height:backingHeight channels:4];
   
-  */
+  glReadPixels(origin_.x, origin_.y, width_, height_, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
+  canvas = [util convertToCV:buffer width:width_ height:height_ channels:4];
+  IplImage *ret = cvCreateImage(cvGetSize(canvas), IPL_DEPTH_8U, 1);
+	cvCvtColor(canvas, ret, CV_RGBA2GRAY);
+	cvReleaseImage(&canvas);
+  
   
   // loading template file.
-  NSString* path = [[NSBundle mainBundle] pathForResource:@"type1" ofType:@"png"];
+  NSString* path = [[NSBundle mainBundle] pathForResource:@"cv" ofType:@"png"];
   UIImage* test = [UIImage imageWithContentsOfFile:path];
-  NSLog(@"%f", test.size.width);
   IplImage* template = [util createIplImageFromUIImage:test];
-  IplImage* canvas = [util createIplImageFromUIImage:test];
   
-  const double result = cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 0);
+  NSLog(@"%f", cvMatchShapes(ret, template, CV_CONTOURS_MATCH_I1, 0));
+  NSLog(@"%f", cvMatchShapes(ret, template, CV_CONTOURS_MATCH_I2, 0));
+  NSLog(@"%f", cvMatchShapes(ret, template, CV_CONTOURS_MATCH_I3, 0));
   
-  NSLog(@"%f", result);
-  
-  cvReleaseImage(&canvas);
+  cvReleaseImage(&ret);
   cvReleaseImage(&template);
 }
 

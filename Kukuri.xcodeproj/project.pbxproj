@@ -15,6 +15,7 @@
 		078F4234144F6FEC00165CDF /* type1.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4231144F6FEC00165CDF /* type1.png */; };
 		078F4235144F6FEC00165CDF /* type2.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4232144F6FEC00165CDF /* type2.png */; };
 		078F4236144F6FEC00165CDF /* type3.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4233144F6FEC00165CDF /* type3.png */; };
+		078F4238144FA22000165CDF /* cv.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4237144FA22000165CDF /* cv.png */; };
 		07D1B4BD144E4E3B00306892 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BC144E4E3B00306892 /* QuartzCore.framework */; };
 		07D1B4BF144E4E3B00306892 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BE144E4E3B00306892 /* OpenGLES.framework */; };
 		07D1B4C1144E4E3B00306892 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4C0144E4E3B00306892 /* OpenAL.framework */; };
@@ -155,6 +156,7 @@
 		078F4231144F6FEC00165CDF /* type1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type1.png; sourceTree = "<group>"; };
 		078F4232144F6FEC00165CDF /* type2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type2.png; sourceTree = "<group>"; };
 		078F4233144F6FEC00165CDF /* type3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type3.png; sourceTree = "<group>"; };
+		078F4237144FA22000165CDF /* cv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cv.png; sourceTree = "<group>"; };
 		07D1B4B8144E4E3B00306892 /* Kukuri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kukuri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D1B4BC144E4E3B00306892 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07D1B4BE144E4E3B00306892 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -464,6 +466,7 @@
 		078F4230144F6FEC00165CDF /* templates */ = {
 			isa = PBXGroup;
 			children = (
+				078F4237144FA22000165CDF /* cv.png */,
 				078F4231144F6FEC00165CDF /* type1.png */,
 				078F4232144F6FEC00165CDF /* type2.png */,
 				078F4233144F6FEC00165CDF /* type3.png */,
@@ -983,6 +986,7 @@
 				078F4234144F6FEC00165CDF /* type1.png in Resources */,
 				078F4235144F6FEC00165CDF /* type2.png in Resources */,
 				078F4236144F6FEC00165CDF /* type3.png in Resources */,
+				078F4238144FA22000165CDF /* cv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

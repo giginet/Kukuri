@@ -10,7 +10,10 @@
 #import "kwing.h"
 
 @interface MagicCircle : NSObject{
+  int width_;
+  int height_;
   NSMutableArray* drawPoints_;
+  KWVector* origin_;
 }
 
 + (id)circle;
