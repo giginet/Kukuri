@@ -48,6 +48,9 @@
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
   [currentCircle_ match];
+  CCSprite* test = [currentCircle_ createSprite];
+  test.position = ccp(100, 100);
+  [self addChild:test];
   self.currentCircle = nil;
 }
 

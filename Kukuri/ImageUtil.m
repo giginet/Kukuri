@@ -8,6 +8,10 @@
 
 #import "ImageUtil.h"
 
+@interface ImageUtil()
+- (CGImageRef)CGImageFromIplImage:(IplImage*)image;
+@end
+
 @implementation ImageUtil
 
 - (GLubyte*)convertToGL:(IplImage *)image{
@@ -68,6 +72,28 @@
 	cvReleaseImage(&iplimage);
   
 	return ret;
+}
+
+- (CGImageRef)CGImageFromIplImage:(IplImage *)image {
+  CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+  // CGImageのためのバッファを確保
+  NSData *data =
+  [NSData dataWithBytes:image->imageData length:image->imageSize];
+  CGDataProviderRef provider =
+  CGDataProviderCreateWithCFData((CFDataRef)data);
+  // IplImageのデータからCGImageを作成
+  CGImageRef imageRef = CGImageCreate(
+                                      image->width, image->height,
+                                      image->depth, image->depth * image->nChannels, image->widthStep,
+                                      colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
+                                      provider, NULL, false, kCGRenderingIntentDefault
+                                      );
+  return imageRef;
+}
+
+- (CCSprite*)createSpriteFromIplImage:(IplImage *)image{
+  CGImageRef cg = [self CGImageFromIplImage:image];
+  return [CCSprite spriteWithCGImage:cg key:@"sprite"];
 }
 
 @end

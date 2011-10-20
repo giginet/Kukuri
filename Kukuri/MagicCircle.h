@@ -20,6 +20,7 @@
 - (void)addPoint:(CGPoint)point;
 - (void)draw;
 - (void)match;
+- (CCSprite*)createSprite;
 
 @property(readwrite, retain) NSMutableArray* drawPoints;
 @end

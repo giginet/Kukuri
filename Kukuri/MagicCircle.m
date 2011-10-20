@@ -85,7 +85,7 @@
   
   
   // loading template file.
-  NSString* path = [[NSBundle mainBundle] pathForResource:@"cv" ofType:@"png"];
+  NSString* path = [[NSBundle mainBundle] pathForResource:@"type4" ofType:@"jpg"];
   UIImage* test = [UIImage imageWithContentsOfFile:path];
   IplImage* template = [util createIplImageFromUIImage:test];
   
@@ -95,6 +95,22 @@
   
   cvReleaseImage(&ret);
   cvReleaseImage(&template);
+}
+
+- (CCSprite*)createSprite{
+  if(width_ <= 0 || height_ <= 0) return nil;
+  ImageUtil* util = [ImageUtil instance];
+  NSInteger myDataLength = width_ * height_ * 4;
+  GLubyte *buffer = (GLubyte *) malloc(myDataLength);
+  IplImage* canvas;
+  
+  glReadPixels(origin_.x, origin_.y, width_, height_, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
+  canvas = [util convertToCV:buffer width:width_ height:height_ channels:4];
+  /*IplImage *ret = cvCreateImage(cvGetSize(canvas), IPL_DEPTH_8U, 1);
+	cvCvtColor(canvas, ret, CV_RGBA2GRAY);
+	cvReleaseImage(&canvas);*/
+  
+  return [util createSpriteFromIplImage:canvas];
 }
 
 @end

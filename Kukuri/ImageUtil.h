@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Kawaz. All rights reserved.
 //
 
-#import "KWSingleton.h"
+#import "kwing.h"
 #import <opencv2/imgproc/imgproc_c.h>
 #import <opencv2/objdetect/objdetect.hpp>
 
@@ -21,5 +21,7 @@
                  channels:(int)channels;
 
 - (IplImage*)createIplImageFromUIImage:(UIImage*)image;
+
+- (CCSprite*)createSpriteFromIplImage:(IplImage*)image;
 
 @end
