@@ -40,7 +40,7 @@
                  channels:(int)channels{
   
   IplImage* conv = cvCreateImage(cvSize(width, height), IPL_DEPTH_8U, channels);
-  for(int i = 0; i < width * height * channels; i += channels){
+  for(int i = 0; i < width * height * channels; ++i){
     conv->imageData[i]     = image[i];
   }
   
@@ -87,7 +87,7 @@
                                       image->depth, image->depth * image->nChannels, image->widthStep,
                                       colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
                                       provider, NULL, false, kCGRenderingIntentDefault
-                                      );
+  );
   return imageRef;
 }
 

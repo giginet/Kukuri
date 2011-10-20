@@ -1175,8 +1175,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Kukuri/libs/cv/lib\"",
-					"\"$(SRCROOT)/Kukuri/libs/cv/include\"/**",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/include\"/**",
 					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/lib\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1201,9 +1200,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Kukuri/libs/cv/lib\"",
-					"\"$(SRCROOT)/Kukuri/libs/cv/include\"/**",
-					"\"$(SRCROOT)/Kukuri/libs/opencv_simulator/lib\"",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_device/include\"/**",
+					"\"$(SRCROOT)/Kukuri/libs/opencv_device/lib\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lstdc++",
