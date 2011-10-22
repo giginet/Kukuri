@@ -58,7 +58,12 @@
 
 - (void)matching:(id)sender{
   NSLog(@"mathing");
-  [self.currentCircle match];
+  NSMutableArray* list = [NSMutableArray array];
+  for(int i = 0; i < 10; ++i){
+    [list addObject:[NSString stringWithFormat:@"type%d.png", i]];
+  }
+  NSString* nearest = [self.currentCircle matchWithTemplates:list];
+  NSLog(@"%@", nearest);
   self.currentCircle.active = NO;
   // create new circle
   self.currentCircle = [MagicCircle circle];

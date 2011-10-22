@@ -42,7 +42,7 @@
     origin_ = [vector clone];
     width_ = 0;
     height_ = 0;
-  }else if([drawPoints count] == 2){
+  }else if(width_ == 0 && height_ == 0){
     KWVector* first = [drawPoints objectAtIndex:0];
     KWVector* second = [drawPoints objectAtIndex:1];
     width_ = abs(first.x - second.x);
@@ -65,7 +65,6 @@
       height_ = vector.y - origin_.y;
     }
   }
-  NSLog(@"%d, %d", width_, height_);
 }
 
 - (void)draw{
@@ -93,24 +92,36 @@
   ccDrawLine(ccp(origin_.x + width_, origin_.y), ccp(origin_.x + width_, origin_.y + height_));
 }
 
-- (void)match{
-  NSLog(@"width:%d, height:%d", width_, height_);
-  if(width_ <= 30 || height_ <= 30) return;
+- (NSString*)matchWithTemplates:(NSArray *)templates{
+  if(width_ <= 30 || height_ <= 30) return nil;
   ImageUtil* util = [ImageUtil instance];
   
   IplImage* canvas = [self drawOnIplImageWithChannels:1];
+  NSString* nearest = nil;
+  double min = 1;
+  for(NSString* templateName in templates){
+    
+    NSArray* token = [templateName componentsSeparatedByString:@"."];
+    NSString* file = [token objectAtIndex:0];
+    NSString* type = [token lastObject];
+
+    // loading template file.
+    NSString* path = [[NSBundle mainBundle] pathForResource:file ofType:type];
+    UIImage* test = [UIImage imageWithContentsOfFile:path];
+    IplImage* template = [util createIplImageFromUIImage:test];
   
-  // loading template file.
-  NSString* path = [[NSBundle mainBundle] pathForResource:@"type6" ofType:@"png"];
-  UIImage* test = [UIImage imageWithContentsOfFile:path];
-  IplImage* template = [util createIplImageFromUIImage:test];
-  
-  NSLog(@"%f", cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 0));
-  NSLog(@"%f", cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I2, 0));
-  NSLog(@"%f", cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I3, 0));
-  
+    double result = (cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 0)
+                     + cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 1)
+                     + cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 2))/3.0;
+    NSLog(@"%f", result);
+    if(result < min){
+      min = result;
+      nearest = templateName;
+    }
+    cvReleaseImage(&template);
+  }
   cvReleaseImage(&canvas);
-  cvReleaseImage(&template);
+  return nearest;
 }
 
 - (void)addLine{

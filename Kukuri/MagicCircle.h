@@ -20,7 +20,7 @@
 + (id)circle;
 - (void)addPoint:(CGPoint)point;
 - (void)draw;
-- (void)match;
+- (NSString*)matchWithTemplates:(NSArray*)templates;
 - (void)addLine;
 - (CCSprite*)createSprite;
 

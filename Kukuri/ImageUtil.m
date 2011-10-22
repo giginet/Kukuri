@@ -78,12 +78,11 @@
 - (CGImageRef)CGImageFromIplImage:(IplImage *)image {
   
   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-  // CGImageのためのバッファを確保
-  NSData *data =
-  [NSData dataWithBytes:image->imageData length:image->imageSize];
+  
+  NSData *data = [NSData dataWithBytes:image->imageData length:image->imageSize];
   CGDataProviderRef provider =
   CGDataProviderCreateWithCFData((CFDataRef)data);
-  // IplImageのデータからCGImageを作成
+  
   CGImageRef imageRef = CGImageCreate(
                                       image->width, image->height,
                                       image->depth, image->depth * image->nChannels, image->widthStep,
