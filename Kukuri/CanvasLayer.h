@@ -15,5 +15,8 @@
   NSMutableArray* circles_;
 }
 
+- (void)cleanup;
+- (void)undo;
+
 @property(readwrite, retain) MagicCircle* currentCircle;
 @end

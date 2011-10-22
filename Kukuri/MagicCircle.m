@@ -113,7 +113,6 @@
     double result = (cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 0)
                      + cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 1)
                      + cvMatchShapes(canvas, template, CV_CONTOURS_MATCH_I1, 2))/3.0;
-    NSLog(@"%f", result);
     if(result < min){
       min = result;
       nearest = templateName;
@@ -121,6 +120,7 @@
     cvReleaseImage(&template);
   }
   cvReleaseImage(&canvas);
+  if(min > 0.0004) return nil;
   return nearest;
 }
 
