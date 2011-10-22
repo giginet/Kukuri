@@ -12,11 +12,17 @@
 		078F422D144F646200165CDF /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F422A144F646200165CDF /* libopencv_core.a */; };
 		078F422E144F646200165CDF /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F422B144F646200165CDF /* libopencv_imgproc.a */; };
 		078F422F144F646200165CDF /* libopencv_objdetect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F422C144F646200165CDF /* libopencv_objdetect.a */; };
-		078F4234144F6FEC00165CDF /* type1.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4231144F6FEC00165CDF /* type1.png */; };
-		078F4235144F6FEC00165CDF /* type2.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4232144F6FEC00165CDF /* type2.png */; };
-		078F4236144F6FEC00165CDF /* type3.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4233144F6FEC00165CDF /* type3.png */; };
 		078F4238144FA22000165CDF /* cv.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F4237144FA22000165CDF /* cv.png */; };
-		078F423A144FA6CA00165CDF /* type4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 078F4239144FA6CA00165CDF /* type4.jpg */; };
+		078F425214528B1200165CDF /* type0.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424814528B1100165CDF /* type0.png */; };
+		078F425314528B1200165CDF /* type1.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424914528B1100165CDF /* type1.png */; };
+		078F425414528B1200165CDF /* type2.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424A14528B1100165CDF /* type2.png */; };
+		078F425514528B1200165CDF /* type3.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424B14528B1100165CDF /* type3.png */; };
+		078F425614528B1200165CDF /* type4.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424C14528B1100165CDF /* type4.png */; };
+		078F425714528B1200165CDF /* type5.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424D14528B1100165CDF /* type5.png */; };
+		078F425814528B1200165CDF /* type6.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424E14528B1100165CDF /* type6.png */; };
+		078F425914528B1200165CDF /* type7.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424F14528B1100165CDF /* type7.png */; };
+		078F425A14528B1200165CDF /* type8.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F425014528B1100165CDF /* type8.png */; };
+		078F425B14528B1200165CDF /* type9.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F425114528B1100165CDF /* type9.png */; };
 		07D1B4BD144E4E3B00306892 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BC144E4E3B00306892 /* QuartzCore.framework */; };
 		07D1B4BF144E4E3B00306892 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BE144E4E3B00306892 /* OpenGLES.framework */; };
 		07D1B4C1144E4E3B00306892 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4C0144E4E3B00306892 /* OpenAL.framework */; };
@@ -154,11 +160,17 @@
 		078F422A144F646200165CDF /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_core.a; sourceTree = "<group>"; };
 		078F422B144F646200165CDF /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
 		078F422C144F646200165CDF /* libopencv_objdetect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_objdetect.a; sourceTree = "<group>"; };
-		078F4231144F6FEC00165CDF /* type1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type1.png; sourceTree = "<group>"; };
-		078F4232144F6FEC00165CDF /* type2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type2.png; sourceTree = "<group>"; };
-		078F4233144F6FEC00165CDF /* type3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type3.png; sourceTree = "<group>"; };
 		078F4237144FA22000165CDF /* cv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cv.png; sourceTree = "<group>"; };
-		078F4239144FA6CA00165CDF /* type4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = type4.jpg; sourceTree = "<group>"; };
+		078F424814528B1100165CDF /* type0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type0.png; sourceTree = "<group>"; };
+		078F424914528B1100165CDF /* type1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type1.png; sourceTree = "<group>"; };
+		078F424A14528B1100165CDF /* type2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type2.png; sourceTree = "<group>"; };
+		078F424B14528B1100165CDF /* type3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type3.png; sourceTree = "<group>"; };
+		078F424C14528B1100165CDF /* type4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type4.png; sourceTree = "<group>"; };
+		078F424D14528B1100165CDF /* type5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type5.png; sourceTree = "<group>"; };
+		078F424E14528B1100165CDF /* type6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type6.png; sourceTree = "<group>"; };
+		078F424F14528B1100165CDF /* type7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type7.png; sourceTree = "<group>"; };
+		078F425014528B1100165CDF /* type8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type8.png; sourceTree = "<group>"; };
+		078F425114528B1100165CDF /* type9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type9.png; sourceTree = "<group>"; };
 		07D1B4B8144E4E3B00306892 /* Kukuri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kukuri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D1B4BC144E4E3B00306892 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07D1B4BE144E4E3B00306892 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -469,10 +481,16 @@
 			isa = PBXGroup;
 			children = (
 				078F4237144FA22000165CDF /* cv.png */,
-				078F4231144F6FEC00165CDF /* type1.png */,
-				078F4232144F6FEC00165CDF /* type2.png */,
-				078F4233144F6FEC00165CDF /* type3.png */,
-				078F4239144FA6CA00165CDF /* type4.jpg */,
+				078F424814528B1100165CDF /* type0.png */,
+				078F424914528B1100165CDF /* type1.png */,
+				078F424A14528B1100165CDF /* type2.png */,
+				078F424B14528B1100165CDF /* type3.png */,
+				078F424C14528B1100165CDF /* type4.png */,
+				078F424D14528B1100165CDF /* type5.png */,
+				078F424E14528B1100165CDF /* type6.png */,
+				078F424F14528B1100165CDF /* type7.png */,
+				078F425014528B1100165CDF /* type8.png */,
+				078F425114528B1100165CDF /* type9.png */,
 			);
 			name = templates;
 			path = Resources/templates;
@@ -986,11 +1004,17 @@
 				07D1B4DD144E4E3B00306892 /* Icon@2x.png in Resources */,
 				07D1B4E0144E4E3B00306892 /* iTunesArtwork in Resources */,
 				07D1B695144E6F5200306892 /* README.rst in Resources */,
-				078F4234144F6FEC00165CDF /* type1.png in Resources */,
-				078F4235144F6FEC00165CDF /* type2.png in Resources */,
-				078F4236144F6FEC00165CDF /* type3.png in Resources */,
 				078F4238144FA22000165CDF /* cv.png in Resources */,
-				078F423A144FA6CA00165CDF /* type4.jpg in Resources */,
+				078F425214528B1200165CDF /* type0.png in Resources */,
+				078F425314528B1200165CDF /* type1.png in Resources */,
+				078F425414528B1200165CDF /* type2.png in Resources */,
+				078F425514528B1200165CDF /* type3.png in Resources */,
+				078F425614528B1200165CDF /* type4.png in Resources */,
+				078F425714528B1200165CDF /* type5.png in Resources */,
+				078F425814528B1200165CDF /* type6.png in Resources */,
+				078F425914528B1200165CDF /* type7.png in Resources */,
+				078F425A14528B1200165CDF /* type8.png in Resources */,
+				078F425B14528B1200165CDF /* type9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,8 +52,6 @@
     cvCvtColor(conv, ret, CV_RGBA2BGRA);
   }
 	cvReleaseImage(&conv);
-  // flip
-  cvFlip(ret, ret, 0);
   
   return ret;
 }

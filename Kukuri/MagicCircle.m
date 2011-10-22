@@ -13,6 +13,7 @@
 
 @interface MagicCircle()
 - (IplImage*)drawOnIplImage:(NSMutableArray*)points 
+                     origin:(KWVector*)origin
                       width:(int)width 
                      height:(int)height 
                    channels:(int)channels;
@@ -88,13 +89,13 @@
 
 - (void)match{
   NSLog(@"width:%d, height:%d", width_, height_);
-  if(width_ <= 0 || height_ <= 0) return;
+  if(width_ <= 30 || height_ <= 30) return;
   ImageUtil* util = [ImageUtil instance];
   
-  IplImage* canvas = [self drawOnIplImage:drawPoints_ width:width_ height:height_ channels:1];
+  IplImage* canvas = [self drawOnIplImage:drawPoints_ origin:origin_ width:width_ height:height_ channels:1];
   
   // loading template file.
-  NSString* path = [[NSBundle mainBundle] pathForResource:@"type4" ofType:@"jpg"];
+  NSString* path = [[NSBundle mainBundle] pathForResource:@"type6" ofType:@"png"];
   UIImage* test = [UIImage imageWithContentsOfFile:path];
   IplImage* template = [util createIplImageFromUIImage:test];
   
@@ -109,29 +110,37 @@
 - (CCSprite*)createSprite{
   if(width_ <= 0 || height_ <= 0) return nil;
   ImageUtil* util = [ImageUtil instance];
-  IplImage* canvas = [self drawOnIplImage:drawPoints_ width:width_ height:height_ channels:3];
+  IplImage* canvas = [self drawOnIplImage:drawPoints_ origin:origin_ width:width_ height:height_ channels:3];
   
   return [util createSpriteFromIplImage:canvas];
 }
 
 - (IplImage*)drawOnIplImage:(NSMutableArray *)points 
+                     origin:(KWVector*)origin
                       width:(int)width 
                      height:(int)height 
                    channels:(int)channels{
   IplImage* surface = cvCreateImage(cvSize(width, height), IPL_DEPTH_8U, channels);
+  CvPoint o, end;
+  o.x = 0;
+  o.y = 0;
+  end.x = width;
+  end.y = height;
+  cvRectangle(surface, o, end, CV_RGB(255, 255, 255), CV_FILLED, 8, 0);
   int count = [drawPoints_ count];
   if(count > 1){
     for(int i = 0; i < count-1; ++i){
       KWVector* begin = (KWVector*)[drawPoints_ objectAtIndex:i];
       KWVector* end   = (KWVector*)[drawPoints_ objectAtIndex:i+1];
       CvPoint b, e;
-      b.x = begin.x;
-      b.y = begin.y;
-      e.x = end.x;
-      e.y = end.y;
-      cvLine(surface, b, e, CV_RGB(0.0, 0.0, 0.0), channels, CV_AA, 0);
+      b.x = begin.x - origin.x;
+      b.y = begin.y - origin.y;
+      e.x = end.x - origin.x;
+      e.y = end.y - origin.y;
+      cvLine(surface, b, e, CV_RGB(0.0, 0.0, 0.0), channels, 8, 0);
     }
   }
+  cvFlip(surface, surface, 0);
   return surface;
 }
 
