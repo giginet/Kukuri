@@ -18,11 +18,6 @@
 		078F425414528B1200165CDF /* type2.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424A14528B1100165CDF /* type2.png */; };
 		078F425514528B1200165CDF /* type3.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424B14528B1100165CDF /* type3.png */; };
 		078F425614528B1200165CDF /* type4.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424C14528B1100165CDF /* type4.png */; };
-		078F425714528B1200165CDF /* type5.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424D14528B1100165CDF /* type5.png */; };
-		078F425814528B1200165CDF /* type6.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424E14528B1100165CDF /* type6.png */; };
-		078F425914528B1200165CDF /* type7.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F424F14528B1100165CDF /* type7.png */; };
-		078F425A14528B1200165CDF /* type8.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F425014528B1100165CDF /* type8.png */; };
-		078F425B14528B1200165CDF /* type9.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F425114528B1100165CDF /* type9.png */; };
 		07D1B4BD144E4E3B00306892 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BC144E4E3B00306892 /* QuartzCore.framework */; };
 		07D1B4BF144E4E3B00306892 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4BE144E4E3B00306892 /* OpenGLES.framework */; };
 		07D1B4C1144E4E3B00306892 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D1B4C0144E4E3B00306892 /* OpenAL.framework */; };
@@ -166,11 +161,6 @@
 		078F424A14528B1100165CDF /* type2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type2.png; sourceTree = "<group>"; };
 		078F424B14528B1100165CDF /* type3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type3.png; sourceTree = "<group>"; };
 		078F424C14528B1100165CDF /* type4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type4.png; sourceTree = "<group>"; };
-		078F424D14528B1100165CDF /* type5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type5.png; sourceTree = "<group>"; };
-		078F424E14528B1100165CDF /* type6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type6.png; sourceTree = "<group>"; };
-		078F424F14528B1100165CDF /* type7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type7.png; sourceTree = "<group>"; };
-		078F425014528B1100165CDF /* type8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type8.png; sourceTree = "<group>"; };
-		078F425114528B1100165CDF /* type9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type9.png; sourceTree = "<group>"; };
 		07D1B4B8144E4E3B00306892 /* Kukuri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kukuri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D1B4BC144E4E3B00306892 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07D1B4BE144E4E3B00306892 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -486,11 +476,6 @@
 				078F424A14528B1100165CDF /* type2.png */,
 				078F424B14528B1100165CDF /* type3.png */,
 				078F424C14528B1100165CDF /* type4.png */,
-				078F424D14528B1100165CDF /* type5.png */,
-				078F424E14528B1100165CDF /* type6.png */,
-				078F424F14528B1100165CDF /* type7.png */,
-				078F425014528B1100165CDF /* type8.png */,
-				078F425114528B1100165CDF /* type9.png */,
 			);
 			name = templates;
 			path = Resources/templates;
@@ -1010,11 +995,6 @@
 				078F425414528B1200165CDF /* type2.png in Resources */,
 				078F425514528B1200165CDF /* type3.png in Resources */,
 				078F425614528B1200165CDF /* type4.png in Resources */,
-				078F425714528B1200165CDF /* type5.png in Resources */,
-				078F425814528B1200165CDF /* type6.png in Resources */,
-				078F425914528B1200165CDF /* type7.png in Resources */,
-				078F425A14528B1200165CDF /* type8.png in Resources */,
-				078F425B14528B1200165CDF /* type9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1248,7 +1228,7 @@
 				07D1B629144E4E3C00306892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		07D1B62A144E4E3C00306892 /* Build configuration list for PBXNativeTarget "Kukuri" */ = {
 			isa = XCConfigurationList;
@@ -1257,7 +1237,7 @@
 				07D1B62C144E4E3C00306892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

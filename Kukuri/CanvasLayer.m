@@ -72,7 +72,7 @@
 - (void)matching:(id)sender{
   NSLog(@"mathing");
   NSMutableArray* list = [NSMutableArray array];
-  for(int i = 0; i < 10; ++i){
+  for(int i = 0; i < 5; ++i){
     [list addObject:[NSString stringWithFormat:@"type%d.png", i]];
   }
   NSString* nearest = [self.currentCircle matchWithTemplates:list];

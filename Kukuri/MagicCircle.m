@@ -16,7 +16,7 @@
 @end
 
 @implementation MagicCircle
-@synthesize lines=lines_, active=active_;
+@synthesize lines=lines_, active=active_, origin=origin_;
 
 - (id)init{
   if(self = [super init]){
@@ -120,7 +120,6 @@
     cvReleaseImage(&template);
   }
   cvReleaseImage(&canvas);
-  if(min > 0.0004) return nil;
   return nearest;
 }
 

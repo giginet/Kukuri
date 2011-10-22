@@ -82,7 +82,6 @@
   NSData *data = [NSData dataWithBytes:image->imageData length:image->imageSize];
   CGDataProviderRef provider =
   CGDataProviderCreateWithCFData((CFDataRef)data);
-  
   CGImageRef imageRef = CGImageCreate(
                                       image->width, image->height,
                                       image->depth, image->depth * image->nChannels, image->widthStep,
@@ -95,7 +94,7 @@
 
 - (CCSprite*)createSpriteFromIplImage:(IplImage *)image{
   CGImageRef cg = [self CGImageFromIplImage:image];
-  return [CCSprite spriteWithCGImage:cg key:@"sprite"];
+  return [CCSprite spriteWithCGImage:cg key:[NSString stringWithFormat:@"sprite%d", [[NSDate date] timeIntervalSince1970]]];
 }
 
 @end

@@ -24,6 +24,7 @@
 - (void)addLine;
 - (CCSprite*)createSprite;
 
+@property(readonly, retain) KWVector* origin;
 @property(readwrite, retain) NSMutableArray* lines;
 @property(readwrite) BOOL active;
 @end
