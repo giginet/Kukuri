@@ -8,6 +8,10 @@
 
 #import "CanvasLayer.h"
 
+@interface CanvasLayer()
+- (void)matching:(id)sender;
+@end
+
 @implementation CanvasLayer
 @synthesize currentCircle=currentCircle_;
 
@@ -34,22 +38,32 @@
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-  self.currentCircle = [MagicCircle circle];
-  [circles_ addObject:self.currentCircle];
+  if([circles_ count] == 0){
+    self.currentCircle = [MagicCircle circle];
+    [circles_ addObject:self.currentCircle];
+  }
   return YES;
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
   CGPoint point = [self convertToWorldSpace:[self convertTouchToNodeSpace:touch]];
   [self.currentCircle addPoint:point];
+  [self unscheduleAllSelectors];
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
-  [currentCircle_ match];
-  CCSprite* test = [currentCircle_ createSprite];
-  test.position = ccp(100, 100);
-  [self addChild:test];
-  self.currentCircle = nil;
+  [self schedule:@selector(matching:) interval:2.0];
+  [self.currentCircle addLine];
+}
+
+- (void)matching:(id)sender{
+  NSLog(@"mathing");
+  [self.currentCircle match];
+  self.currentCircle.active = NO;
+  // create new circle
+  self.currentCircle = [MagicCircle circle];
+  [circles_ addObject:self.currentCircle];
+  [self unscheduleAllSelectors];
 }
 
 - (void)dealloc{

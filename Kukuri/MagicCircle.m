@@ -12,22 +12,20 @@
 #import "ImageUtil.h"
 
 @interface MagicCircle()
-- (IplImage*)drawOnIplImage:(NSMutableArray*)points 
-                     origin:(KWVector*)origin
-                      width:(int)width 
-                     height:(int)height 
-                   channels:(int)channels;
+- (IplImage*)drawOnIplImageWithChannels:(int)channels;
 @end
 
 @implementation MagicCircle
-@synthesize drawPoints=drawPoints_;
+@synthesize lines=lines_, active=active_;
 
 - (id)init{
   if(self = [super init]){
-    self.drawPoints = [NSMutableArray array];
+    lines_ = [[NSMutableArray alloc] init];
+    [lines_ addObject:[NSMutableArray array]];
     width_ = 0;
     height_ = 0;
     origin_ = nil;
+    active_ = YES;
   }
   return self;
 }
@@ -38,14 +36,15 @@
 
 - (void)addPoint:(CGPoint)point{
   KWVector* vector = [KWVector vectorWithPoint:point];
-  [drawPoints_ addObject:vector];
+  NSMutableArray* drawPoints = [lines_ lastObject];
+  [drawPoints addObject:vector];
   if(!origin_){
     origin_ = [vector clone];
     width_ = 0;
     height_ = 0;
-  }else if([drawPoints_ count] == 2){
-    KWVector* first = [drawPoints_ objectAtIndex:0];
-    KWVector* second = [drawPoints_ objectAtIndex:1];
+  }else if([drawPoints count] == 2){
+    KWVector* first = [drawPoints objectAtIndex:0];
+    KWVector* second = [drawPoints objectAtIndex:1];
     width_ = abs(first.x - second.x);
     height_ = abs(first.y - second.y);
   }else{
@@ -66,17 +65,24 @@
       height_ = vector.y - origin_.y;
     }
   }
+  NSLog(@"%d, %d", width_, height_);
 }
 
 - (void)draw{
-  glColor4f(0.0, 1.0, 0.0, 1.0);
+  if(active_){
+    glColor4f(0.0, 1.0, 0.0, 1.0);
+  }else{
+    glColor4f(0.0, 0.0, 1.0, 1.0);
+  }
   glLineWidth(4.0f);
-  int count = [drawPoints_ count];
-  if(count > 1){
-    for(int i = 0; i < count-1; ++i){
-      KWVector* begin = (KWVector*)[drawPoints_ objectAtIndex:i];
-      KWVector* end   = (KWVector*)[drawPoints_ objectAtIndex:i+1];
-      ccDrawLine(begin.point, end.point);
+  for(NSMutableArray* line in lines_){
+    int count = [line count];
+    if(count > 1){
+      for(int i = 0; i < count-1; ++i){
+        KWVector* begin = (KWVector*)[line objectAtIndex:i];
+        KWVector* end   = (KWVector*)[line objectAtIndex:i+1];
+        ccDrawLine(begin.point, end.point);
+      }
     }
   }
   glColor4f(1.0, 0.0, 0.0, 1.0);
@@ -92,7 +98,7 @@
   if(width_ <= 30 || height_ <= 30) return;
   ImageUtil* util = [ImageUtil instance];
   
-  IplImage* canvas = [self drawOnIplImage:drawPoints_ origin:origin_ width:width_ height:height_ channels:1];
+  IplImage* canvas = [self drawOnIplImageWithChannels:1];
   
   // loading template file.
   NSString* path = [[NSBundle mainBundle] pathForResource:@"type6" ofType:@"png"];
@@ -107,41 +113,49 @@
   cvReleaseImage(&template);
 }
 
+- (void)addLine{
+  NSMutableArray* line = [NSMutableArray array];
+  [lines_ addObject:line];
+}
+
 - (CCSprite*)createSprite{
   if(width_ <= 0 || height_ <= 0) return nil;
   ImageUtil* util = [ImageUtil instance];
-  IplImage* canvas = [self drawOnIplImage:drawPoints_ origin:origin_ width:width_ height:height_ channels:3];
+  IplImage* canvas = [self drawOnIplImageWithChannels:3];
   
   return [util createSpriteFromIplImage:canvas];
 }
 
-- (IplImage*)drawOnIplImage:(NSMutableArray *)points 
-                     origin:(KWVector*)origin
-                      width:(int)width 
-                     height:(int)height 
-                   channels:(int)channels{
-  IplImage* surface = cvCreateImage(cvSize(width, height), IPL_DEPTH_8U, channels);
+- (IplImage*)drawOnIplImageWithChannels:(int)channels{
+  IplImage* surface = cvCreateImage(cvSize(width_, height_), IPL_DEPTH_8U, channels);
   CvPoint o, end;
   o.x = 0;
   o.y = 0;
-  end.x = width;
-  end.y = height;
+  end.x = width_;
+  end.y = height_;
   cvRectangle(surface, o, end, CV_RGB(255, 255, 255), CV_FILLED, 8, 0);
-  int count = [drawPoints_ count];
-  if(count > 1){
-    for(int i = 0; i < count-1; ++i){
-      KWVector* begin = (KWVector*)[drawPoints_ objectAtIndex:i];
-      KWVector* end   = (KWVector*)[drawPoints_ objectAtIndex:i+1];
-      CvPoint b, e;
-      b.x = begin.x - origin.x;
-      b.y = begin.y - origin.y;
-      e.x = end.x - origin.x;
-      e.y = end.y - origin.y;
-      cvLine(surface, b, e, CV_RGB(0.0, 0.0, 0.0), channels, 8, 0);
+  for(NSMutableArray* line in lines_){
+    int count = [line count];
+    if(count > 1){
+      for(int i = 0; i < count-1; ++i){
+        KWVector* begin = (KWVector*)[line objectAtIndex:i];
+        KWVector* end   = (KWVector*)[line objectAtIndex:i+1];
+        CvPoint b, e;
+        b.x = begin.x - origin_.x;
+        b.y = begin.y - origin_.y;
+        e.x = end.x - origin_.x;
+        e.y = end.y - origin_.y;
+        cvLine(surface, b, e, CV_RGB(0.0, 0.0, 0.0), channels, 8, 0);
+      }
     }
   }
   cvFlip(surface, surface, 0);
   return surface;
+}
+
+- (void)dealloc{
+  [lines_ release];
+  [super dealloc];
 }
 
 @end

@@ -12,7 +12,8 @@
 @interface MagicCircle : NSObject{
   int width_;
   int height_;
-  NSMutableArray* drawPoints_;
+  BOOL active_;
+  NSMutableArray* lines;
   KWVector* origin_;
 }
 
@@ -20,7 +21,9 @@
 - (void)addPoint:(CGPoint)point;
 - (void)draw;
 - (void)match;
+- (void)addLine;
 - (CCSprite*)createSprite;
 
-@property(readwrite, retain) NSMutableArray* drawPoints;
+@property(readwrite, retain) NSMutableArray* lines;
+@property(readwrite) BOOL active;
 @end
